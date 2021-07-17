@@ -18,10 +18,12 @@ class LoginController extends Controller
                 'password' => $request->password,
             ];
             if (Auth::attempt($credentials)) {
-                // Authentication was successful...
-            }
-        }catch (Exception $exception){
 
+            }
+            notFoundResponse();
+        }catch (Exception $exception){
+                 return hey();
+            reFailed($exception->getMessage());
         }
     }
 }

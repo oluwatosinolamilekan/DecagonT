@@ -1,14 +1,12 @@
 <?php
 
 
-namespace App\Helper;
-
+namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 
-class DisplayResponse
-{
+
     function resourceNotFound(): JsonResponse
     {
         return response()->json([
@@ -103,4 +101,14 @@ class DisplayResponse
             ]
         ]);
     }
-}
+
+    function hey()
+    {
+        return [
+            'status' => false,
+            'message' => "Operation Failed",
+            'errors' => 'unauthorized',
+            'data' => null,
+            'meta' => null
+        ];
+    }
